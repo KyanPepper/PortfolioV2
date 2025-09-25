@@ -493,6 +493,7 @@
             color: var(--text-gray);
             margin-bottom: 2rem;
             font-size: 1.05rem;
+            line-height: 1.6;
         }
 
         .contact-grid {
@@ -500,6 +501,11 @@
             justify-content: center;
             gap: 2rem;
             margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            min-width: 120px;
         }
 
         .contact-item h4 {
@@ -526,13 +532,16 @@
         footer {
             background: var(--bg-gray);
             text-align: center;
-            padding: 2rem;
+            padding: 2rem 1rem;
             border-top: 1px solid var(--border);
+            margin-top: 0;
+            width: 100%;
         }
 
         footer p {
             color: var(--text-gray);
             font-size: 0.9rem;
+            margin: 0;
         }
 
         /* Responsive Design */
@@ -587,9 +596,34 @@
                 grid-template-columns: 1fr;
             }
 
+            /* Fixed mobile contact section */
+            .contact {
+                padding: 3rem 1rem;
+            }
+
             .contact-grid {
-                grid-template-columns: 1fr;
+                flex-direction: column;
                 gap: 1.5rem;
+                align-items: center;
+                margin-top: 2rem;
+            }
+
+            .contact-item {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+            }
+
+            /* Fixed mobile footer */
+            footer {
+                padding: 1.5rem 1rem;
+                margin-top: 0;
+            }
+
+            footer p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+                word-wrap: break-word;
             }
 
             .skill-group {
@@ -604,6 +638,7 @@
 
             .section-title {
                 font-size: 1.5rem;
+                margin-bottom: 2rem;
             }
 
             .cta-buttons {
@@ -622,6 +657,67 @@
 
             .project-card {
                 min-width: unset;
+            }
+
+            /* Extra small screens - contact fixes */
+            .contact {
+                padding: 2.5rem 1rem;
+            }
+
+            .contact-content p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-grid {
+                gap: 1.25rem;
+                margin-top: 1.5rem;
+            }
+
+            .contact-item {
+                max-width: 240px;
+            }
+
+            .contact-item h4 {
+                font-size: 0.8rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .contact-item a {
+                font-size: 0.95rem;
+            }
+
+            /* Extra mobile footer fixes */
+            footer {
+                padding: 1.25rem 1rem;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+
+            /* Section padding adjustments for small screens */
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 320px) {
+            .contact-item {
+                max-width: 200px;
+            }
+            
+            footer p {
+                font-size: 0.75rem;
+            }
+
+            .nav-container {
+                padding: 1rem 1rem;
+            }
+
+            section {
+                padding: 2.5rem 1rem;
             }
         }
     </style>
