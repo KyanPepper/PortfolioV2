@@ -102,7 +102,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 400px;
             gap: 4rem;
             align-items: center;
         }
@@ -131,10 +131,19 @@
         .hero-image {
             display: flex;
             justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid var(--border);
         }
 
         .hero-image-placeholder {
-            width: 400px;
+            width: 100%;
             height: 400px;
             background: var(--bg-gray);
             border: 2px solid var(--border);
@@ -207,12 +216,12 @@
 
         .about-content {
             display: grid;
-            grid-template-columns: 300px 1fr;
+            grid-template-columns: 1fr;
             gap: 3rem;
         }
 
         .about-image {
-            width: 100%;
+            width: 300px;
             height: 350px;
             background: var(--bg-white);
             border: 1px solid var(--border);
@@ -222,6 +231,11 @@
             justify-content: center;
             color: var(--text-gray);
             font-size: 0.9rem;
+            margin: 0 auto 2rem;
+        }
+
+        .about-text {
+            text-align: center;
         }
 
         .about-text h3 {
@@ -234,10 +248,14 @@
             color: var(--text-gray);
             margin-bottom: 1.5rem;
             line-height: 1.7;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .skills-container {
             margin-top: 2rem;
+            text-align: center;
         }
 
         .skills-container h4 {
@@ -250,7 +268,8 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            justify-content: center;
         }
 
         .skill-tag {
@@ -275,7 +294,7 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 2rem;
         }
 
@@ -285,16 +304,33 @@
             border-radius: 8px;
             overflow: hidden;
             transition: box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
-        .project-image {
-            height: 200px;
+        .project-image-container {
+            height: 220px;
             background: var(--bg-gray);
             border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .project-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-image {
+            height: 100%;
+            background: var(--bg-gray);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -304,6 +340,9 @@
 
         .project-content {
             padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-header {
@@ -323,6 +362,7 @@
             font-size: 0.95rem;
             line-height: 1.6;
             margin-bottom: 1rem;
+            flex: 1;
         }
 
         .project-tech {
@@ -345,6 +385,7 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
+            margin-top: auto;
         }
 
         .project-link:hover {
@@ -352,24 +393,29 @@
             text-decoration: underline;
         }
 
-        /* Experience Section - Simplified */
+        /* Experience Section */
         .experience {
             background: var(--bg-gray);
         }
 
         .experience-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .experience-card {
             background: var(--bg-white);
             border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 1.25rem;
+            padding: 2rem 1.5rem;
             text-align: center;
             transition: box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .experience-card:hover {
@@ -377,12 +423,30 @@
         }
 
         .company-logo {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .company-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: var(--bg-white);
+        }
+
+        .company-logo-placeholder {
+            width: 60px;
+            height: 60px;
             background: var(--bg-gray);
             border: 1px solid var(--border);
             border-radius: 6px;
-            margin: 0 auto 1rem;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -392,21 +456,21 @@
         }
 
         .experience-card h3 {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--text-dark);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
         }
 
         .company-name {
             color: var(--orange);
             font-weight: 500;
-            font-size: 0.9rem;
-            margin-bottom: 0.25rem;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .experience-date {
             color: var(--text-gray);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
         /* Contact Section */
@@ -427,8 +491,8 @@
         }
 
         .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            justify-content: center;
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -522,6 +586,10 @@
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
+
+            .skill-group {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -541,6 +609,14 @@
             .btn {
                 width: 100%;
                 justify-content: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                min-width: unset;
             }
         }
     </style>
@@ -575,7 +651,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="kyan.jpeg" alt="Kyan Kotschevar-Smead" style="width:100%; height:auto; border-radius:8px;">
+                <img src="kyan.jpeg" alt="Kyan Kotschevar-Smead">
             </div>
         </div>
     </section>
@@ -619,27 +695,33 @@
         </div>
     </section>
 
-    <!-- Experience Section - Simplified -->
+    <!-- Experience Section -->
     <section class="experience" id="experience">
         <div class="section-container">
             <h2 class="section-title">Experience</h2>
             <div class="experience-grid">
                 <div class="experience-card">
-                    <img src="IntelliTect_WhiteBlue-Box.svg"  alt="Intellitect Logo">
+                    <div class="company-logo">
+                        <img src="IntelliTect_WhiteBlue-Box.svg" alt="Intellitect Logo">
+                    </div>
                     <h3>Software Engineer Intern</h3>
                     <div class="company-name">Intellitect</div>
                     <div class="experience-date">May 2024 - Present</div>
                 </div>
 
                 <div class="experience-card">
-                    <img src="devswipe.png" alt="DevSwipe Logo">
+                    <div class="company-logo">
+                        <img src="devswipe.png" alt="DevSwipe Logo">
+                    </div>
                     <h3>CEO & Founder</h3>
                     <div class="company-name">DevSwipe LLC</div>
                     <div class="experience-date">May 2025 - Present</div>
                 </div>
 
                 <div class="experience-card">
-                    <img src="cloudflare.webp" alt="Cloudflare Logo">
+                    <div class="company-logo">
+                        <img src="cloudflare.webp" alt="Cloudflare Logo">
+                    </div>
                     <h3>Senior Capstone Project</h3>
                     <div class="company-name">Cloudflare</div>
                     <div class="experience-date">Aug 2025 - Present</div>
@@ -654,8 +736,9 @@
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="1on1.png" alt="1on1 Piano Screenshot" class="project-image">
-
+                    <div class="project-image-container">
+                        <img src="1on1.png" alt="1on1 Piano Screenshot">
+                    </div>
                     <div class="project-content">
                         <div class="project-header">
                             <h3>1on1 Piano</h3>
@@ -675,7 +758,9 @@
                 </div>
 
                 <div class="project-card">
-                    <img src="devswipeapp.png" alt="DevSwipe Screenshot" class="project-image">
+                    <div class="project-image-container">
+                        <img src="devswipeapp.png" alt="DevSwipe Screenshot">
+                    </div>
                     <div class="project-content">
                         <div class="project-header">
                             <h3>DevSwipe</h3>
@@ -695,7 +780,9 @@
                 </div>
 
                 <div class="project-card">
-                    <img src="cloesce.png" alt="Cloesce Screenshot" class="project-image">
+                    <div class="project-image-container">
+                        <img src="cloesce.png" alt="Cloesce Screenshot">
+                    </div>
                     <div class="project-content">
                         <div class="project-header">
                             <h3>Cloesce - Cloudflare IaC</h3>
@@ -714,7 +801,9 @@
                 </div>
 
                 <div class="project-card">
-                    <img src="avistabill.png" alt="Avista Bill Rendering Screenshot" class="project-image">
+                    <div class="project-image-container">
+                        <img src="avistabill.png" alt="Avista Bill Rendering Screenshot">
+                    </div>
                     <div class="project-content">
                         <div class="project-header">
                             <h3>Avista Bill Rendering</h3>
